@@ -1,0 +1,87 @@
+/* Reset some basic elements */
+body, h1, h2, ul, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header styling */
+header {
+    background: #202020;
+    color: #ffffff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+/* Navigation styling */
+nav {
+    background: #333333;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 0.5em 1em;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background-color: #555555;
+}
+
+/* Main content styling */
+main {
+    padding: 20px;
+}
+
+main h2 {
+    margin-bottom: 0.5em;
+}
+
+main ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+main ul li {
+    margin-bottom: 0.3em;
+}
+
+main ul li a {
+    text-decoration: none;
+    color: #1a0dab;
+}
+
+main ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background: #202020;
+    color: #ffffff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
