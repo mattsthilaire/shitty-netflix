@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ movie.title }}{% endblock %}
+
+{% block content %}
+<main>
+    <div class="content-container">
+        <h1>{{ movie.title }}</h1>
+        <video controls>
+            <source src="{{ movie.url }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</main>
+{% endblock %}

@@ -1,42 +1,20 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>My First HTML5 Page</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-
-<body>
-    <header>
-        <h1>Shitty Netflix: All The Movies You Can Afford to Watch!</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="movies.html">Movies</a></li>
-            <li><a href="my_list.html">My List</a></li>
-            <li><a href="about.html">About</a></li>
-        </ul>
-    </nav>
-    <main>
-        <!--These do not work at the moment-->
-        <h2>Movie List</h2>
-        <p>Here is a list of all the movies we have available for you to watch!</p>
-        <ul>
-            <li><a href="movie1.html">Movie 1</a></li>
-            <li><a href="movie2.html">Movie 2</a></li>
-            <li><a href="movie3.html">Movie 3</a></li>
-            <li><a href="movie4.html">Movie 4</a></li>
-            <li><a href="movie5.html">Movie 5</a></li>
-            <li><a href="movie6.html">Movie 6</a></li>
-            <li><a href="movie7.html">Movie 7</a></li>
-            <li><a href="movie8.html">Movie 8</a></li>
-            <li><a href="movie9.html">Movie 9</a></li>
-            <li><a href="movie10.html">Movie 10</a></li>
-        </ul>
-    </main>
-    <footer>
-        <p>&copy; 2018 Shitty Netflix</p>
-    </footer>
-</body>
+{%block content %}
+<main>
+    <!--These do not work at the moment-->
+    <h2>Movie List</h2>
+    <div class="row">
+        {% for movie in movies %}
+            <div class="col-md-4 movie">
+                <a href="{{ url_for('watch_movie', movie_id=movie.id) }}">
+                    <div class="movie-title">{{ movie.title }}</div>
+                    <img src="{{ url_for('static', filename=movie.image_url) }}" alt="{{ movie.title }}" class="movie-image">
+                    <div class="movie-description">
+                        <p>{{ movie.description }}</p>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+</main>
+{% endblock %}

@@ -77,11 +77,102 @@ footer {
     padding: 1em 0;
     background: #202020;
     color: #ffffff;
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
 }
 
 footer p {
     margin: 0;
+}
+
+.content-container {
+    text-align: center;
+    width: 100%; /* Use the full width of the page */
+    max-width: 900px; /* You can adjust this to set a max width if desired */
+    margin: 0 auto; /* Center the container */
+}
+
+.content-container h1 {
+    margin-bottom: 20px; /* add space between the title and the video */
+}
+
+video {
+    width: 100%; /* Make the video take the full width of its container */
+    height: auto; /* Keep the aspect ratio */
+    display: block;
+    margin: 0 auto; /* Center the video if the container is wider */
+}
+
+@media screen and (max-width: 768px) {
+    .content-container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+}
+
+.content-container h1 {
+    margin-bottom: 10px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#content {
+    flex: 1;
+}
+
+footer {
+    background: #333;
+    color: white;
+    width: 100%;
+}
+
+/* New Stuff for hover effects */
+
+.movie {
+    position: relative;
+    overflow: hidden;
+    /* other styles */
+}
+
+.movie-title,
+.movie-description {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.movie-title {
+    top: 0;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    font-size: 1.5em; /* Larger font size for title */
+    transform: translateY(-100%); /* Hide the title above the top edge */
+}
+
+.movie-description {
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    transform: translateY(100%); /* Hide the description below the bottom edge */
+    display: none; /* Hide by default */
+}
+
+.movie:hover .movie-title {
+    transform: translateY(0); /* Show the title */
+}
+
+.movie:hover .movie-description {
+    transform: translateY(0); /* Show the description */
+    display: block; /* Display the description on hover */
 }

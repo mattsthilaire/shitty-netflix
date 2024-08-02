@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main>
+    <h1>Add a New Movie</h1>
+    <form action="{{ url_for('add_movie') }}" method="POST">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+        <label for="title">Movie Title</label>
+        <input type="text" name="title" id="title">
+
+        <label for="s3_url">S3 URL</label>
+        <input type="text" name="s3_url" id="s3_url" required>
+
+        <label for="image_url">Image URL</label>
+        <input type="text" name="image_url" id="image_url" required>
+
+        <label for="description">Description</label>
+        <input type="text" name="description" id="description" required>
+
+        <input type="submit" value="Add Movie">
+    </form>
+</main>
+{% endblock %}
